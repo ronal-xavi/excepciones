@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
 
     @PostMapping
-    public ResponseEntity saveUser(@RequestBody UserDAO userDAO){
+    public ResponseEntity<String> saveUser(@RequestBody UserDAO userDAO){
         if (StringUtils.isEmpty(userDAO.getName())){
             throw new RequestException("P-500","Name is required");
         }

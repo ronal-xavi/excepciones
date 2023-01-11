@@ -1,12 +1,12 @@
 package com.ronal.excepciones.exception;
 
-import lombok.Data;
+import lombok.Getter;
 import org.springframework.http.HttpStatus;
 
-@Data
+@Getter
 public class BusinessException extends RuntimeException{
-    private String code;
-    private HttpStatus status;
+    private final String code;
+    private final  HttpStatus status;
 
     public BusinessException(String code, HttpStatus status, String message) {
         super(message);

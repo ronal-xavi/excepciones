@@ -1,12 +1,12 @@
 package com.ronal.excepciones.exception;
 
-import lombok.Data;
+import lombok.Getter;
 
-@Data
+@Getter
 public class RequestException extends RuntimeException{
-    private String code;
+    private final  String  code;
 
-    public RequestException(String code, String message) {
+    public RequestException(String message,String code) {
         super(message);
         this.code = code;
     }
